@@ -35,7 +35,7 @@ public class Bicycle {
             this.nRearSprockets = 3;
         }
         setFrontSprocket(nFrontSprockets);
-        setRearSprocket(1);
+        this.rearSprocket = 1;
         this.v = v;
     }
     
@@ -121,10 +121,6 @@ public class Bicycle {
         }
     }
     
-    /** Stop **/
-    public void stop() {
-        this.v = 0;
-    }
     /** Change Sprockets */
     public boolean changeFrontSprocket(int n) {
         boolean shiftPossible = true;

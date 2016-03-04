@@ -1,76 +1,68 @@
-/*
- * Person.java        1.1 28/11/2012 
- *
- * Copyright 2010-2012 Mònica Ramírez Arceda <mramirez@escoladeltreball.org>
- *                     Joaquim Laplana Tarragona <jlaplana@escoladeltreball.org>
- *
- * This is free software, licensed under the GNU General Public License v3.
- * See http://www.gnu.org/licenses/gpl.html for more information.
- */
-
-package person;
-
 /**
- * Modelizes a person. The person has age, height, sex and can be married or not.
+ * Class person 24/2/2016
+ * Gio Mikee Plata Justiniano
+ * 
  */
+
+package bicycle;
+
 public class Person {
-    /** The person's name */
+    // Name
     private String name;
-    /** The person's age */
+    // Age
     private int age;
-    /** The person's height */
+    // Height
     private double height;
-    /** The person's sex. It can be 'M' (man) or 'W' (woman) */
+    // Sex (M / W)
     private char sex;
-    /** Sets whether the person is married or not */
+    // Married or not
     private boolean married;
-
+    /** Person's bike */
+    private Bicycle bike;
+    
     // Constructors
-
+    
     /**
-     * Constructor by default.
+     * Default constructor
      */
     public Person() {
         this.married = true;
     }
-
     /**
-     * Constructor.
+     * Constructor
      * 
      * @param name the person's name.
      */
     public Person(String name) {
         this.name = name;
     }
-
+    
     /**
-     * Constructor.
+     * Constructor
      * 
-     * @param name the person's name.
-     * @param age the person's age.
+     * @param name the person's name
+     * @param age the person's age
      * @param height the person's height
-     * @param sex the person's sex. It can be 'M' (man) or 'W' (woman).
+     * @param sex the person's sex. It can be 'M' man or 'W' (woman)
      * @param married true if the person is married, false otherwise
      */
     public Person(String name, int age, double height, char sex, boolean married) {
         this.name = name;
+        //this.age = age;
         this.setAge(age);
         this.height = height;
         this.sex = sex;
         this.married = married;
     }
-
-    // Getters and setters
-
+    
     /**
-     * Gets the person's name.
      * 
-     * @return the person's name.
+     * @return the person's name
      */
     public String getName() {
         return this.name;
     }
-
+    
     /**
      * Sets the person's name.
      * 
@@ -79,97 +71,92 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-
+    
     /**
-     * Gets person's age.
+     * Gets person's age
      * 
-     * @return the person's age.
+     * @return the person's age
      */
     public int getAge() {
         return this.age;
     }
-
+    
     /**
-     * Sets the person's age.
+     * Sets the person's age
      * 
-     * @param age the person's age.
+     * @param age the person's age;
      */
     public void setAge(int age) {
-        if (age >= 0)
-            this.age = age;
+        this.age = age;
     }
-
+    
     /**
-     * Gets the height of the person.
+     * Gets the person's height
      * 
-     * @return the person's height.
+     * @return height the person's height
      */
     public double getHeight() {
         return this.height;
     }
-
+    
     /**
-     * Sets the person's height.
+     * Sets the person's height
      * 
-     * @param height the person's height.
+     * @param height the person's height
      */
     public void setHeight(double height) {
         this.height = height;
     }
-
+    
     /**
-     * Gets the sex of the person.
+     * Gets the person's sex
      * 
-     * @return the person's sex.
+     * @return the person's sex
      */
     public char getSex() {
         return this.sex;
     }
-
+    
     /**
-     * Sets the person's sex.
+     * Set the person's sex
      * 
-     * @param name the person's sex.
+     * @param the person's sex
      */
     public void setSex(char sex) {
-        if (sex == 'W' || sex == 'M')
-            this.sex = sex;
+        this.sex = sex;
     }
-
+    
     /**
-     * Gets if the person is married.
+     * Gets the person's marital status
      * 
-     * @return true if he/she is married, false otherwise
+     * @return the value of the boolean variable married
      */
-    public boolean isMarried() {
+    public boolean getMarried() {
         return this.married;
     }
-
+    
     /**
-     * Sets if person is married.
+     * Sets the person's marital status
      * 
-     * @param married true if the person is married, false otherwise
+     * @param married set true if married false otherwise
      */
     public void setMarried(boolean married) {
         this.married = married;
     }
-
-    // More methods
     
     /**
-     * Increments person's age by 1.
+     * Increases person's age by 1
      */
     public void birthday() {
         this.age++;
     }
-
+    
     /**
-     * Textual representation of the object.
+     * Create a string of the person's information
      * 
-     * @return a string that represents the person
+     * @return the information of the person in string
      */
     public String toString() {
-        String s = "El meu nom és " + this.name + " i  sóc " + this.sex;
-        return s;
+        return "[ " + this.name + ", " + this.age + ", " + this.height + ", " + this.sex + ", " + this.married + " ]";
     }
 }
