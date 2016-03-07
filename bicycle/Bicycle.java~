@@ -66,7 +66,7 @@ public class Bicycle {
     }
     
     public void setRearSprocket(int rearSprocket) {
-        if (rearSprocket > 0 && rearSprocket <= this.nRearSprockets) {
+        if (changeRearSprocket(rearSprocket)) {
             this.rearSprocket = rearSprocket;
         }
     }
@@ -76,7 +76,7 @@ public class Bicycle {
     }
     
     public void setFrontSprocket(int frontSrpocket) {
-        if (frontSprocket > 0 && frontSprocket <= this.nFrontSprockets) {
+        if (changeFrontSprocket(frontSprocket)) {
             this.frontSprocket = frontSprocket;
         }
     }
@@ -153,8 +153,4 @@ public class Bicycle {
         }
         return shiftPossible;
     }
-    
-    public boolean slowDown() {
-        return true;
-    }       
 }
